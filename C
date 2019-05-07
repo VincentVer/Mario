@@ -1,0 +1,37 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{ 
+    int n;
+    do
+    {
+        n = get_int("What is the height of the pyramid?");
+    }
+    while (n < 1 || n > 8);
+// amount of rows
+    for (int rows = 0; rows < n; rows++)
+    {
+// amount of spaces
+        for (int space = rows; space < (n - 1); space++)
+        {
+            printf(" ");
+        }  
+            
+// amount of hashes left
+        for (int hash = (n - rows); hash < (n + 1); hash++)
+        {
+            printf("#");
+        }  
+        // spaces inbetween
+        {
+            printf("  ");
+        }
+        // right hashes
+        for (int hash = (n - rows); hash < (n + 1); hash++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }   
+}   
